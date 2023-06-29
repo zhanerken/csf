@@ -19,8 +19,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file ./docker/server/Dockerfile --tag zhanerken/cfs-prod:$(date +%s)
+      run: docker build . --file ./docker/server/Dockerfile --tag zhanerken/cfs-prod:0.2
     - name: Login
       run: docker login -u ${{ env.DOCKER_USERNAME }} -p ${{ env.DOCKER_PASSWORD }}
     - name: Push
-      run: docker push zhanerken/cfs-prod:$(date +%s)
+      run: docker push zhanerken/cfs-prod:0.2
